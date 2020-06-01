@@ -24,8 +24,12 @@ public class Main extends Application {
         Main.users = JSONFile.Load();
         for (int x=0; x < Main.users.size(); x++) {
             String name = Main.users.get(x).getName();
+            String answer = Main.users.get(x).getAnswer();
+            String Question = Main.users.get(x).getSecurityQuestion();
             String decName = enc.decrypt(name, "ABC123");
             Main.users.get(x).setName(decName);
+            Main.users.get(x).setAnswer(answer);
+            Main.users.get(x).setSecurityQuestion(Question);
         }
     }
 

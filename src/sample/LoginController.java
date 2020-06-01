@@ -44,4 +44,9 @@ public class LoginController {
     public void signup(ActionEvent actionEvent) throws IOException {
         Common.loadWindow(actionEvent, "Signup.fxml");
     }
+
+    public void forgot(ActionEvent actionEvent) throws IOException {
+        Common.loadWindow(actionEvent, "ForgotPassword.fxml");
+    }
+
 }

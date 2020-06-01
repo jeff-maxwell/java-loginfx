@@ -30,6 +30,10 @@ public class SignupController {
     public PasswordField txtPassword;
     @FXML
     public PasswordField txtConfirmPassword;
+    @FXML
+    public TextField txtSecurity;
+    @FXML
+    public TextField txtAnswer;
 
 
     public void signup(ActionEvent actionEvent) throws IOException, IllegalBlockSizeException, InvalidKeyException, BadPaddingException, NoSuchAlgorithmException, NoSuchPaddingException {
@@ -38,6 +42,8 @@ public class SignupController {
         user.setName(txtName.getText());
         user.setUsername(txtUsername.getText());
         user.setEmail(txtEmail.getText());
+        user.setSecurityQuestion(txtSecurity.getText());
+        user.setAnswer(txtAnswer.getText());
 
         byte[] salt = hash.getSalt();
         String password = hash.getHash(txtPassword.getText(),salt);
@@ -52,7 +58,11 @@ public class SignupController {
 
         for (int x=0; x< Main.users.size(); x++) {
             String encName = enc.encrypt(Main.users.get(x).getName(), "ABC123");
+            String encSec = enc.encrypt(Main.users.get(x).getSecurityQuestion(), "ABC123");
+            String encAns = enc.encrypt(Main.users.get(x).getAnswer(), "ABC123");
             Main.users.get(x).setName(encName);
+            Main.users.get(x).setSecurityQuestion(encSec);
+            Main.users.get(x).setAnswer(encAns);
         }
 
         JSONFile.Save(Main.users);
