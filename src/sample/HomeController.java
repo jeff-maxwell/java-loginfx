@@ -32,4 +32,8 @@ public class HomeController {
     public void changePassword(ActionEvent actionEvent) throws IOException {
         Common.loadWindow(actionEvent, "ChangePassword.fxml");
     }
+
+    public void changeSecurity(ActionEvent actionEvent) throws IOException {
+        Common.loadWindow(actionEvent, "changeSecurity.fxml");
+    }
 }

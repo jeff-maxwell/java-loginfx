@@ -13,7 +13,7 @@ public class SecurityUserController {
 
     public void submit(ActionEvent actionEvent) throws IOException {
         for (int x = 0; x < Main.users.size(); x++) {
-            if (txtUsername.getText().equals(Main.users.get(x).getName())) {
+            if (txtUsername.getText().equals(Main.users.get(x).getUsername())) {
                 Main.currentUser = Main.users.get(x);
                 Common.loadWindow(actionEvent, "Security.fxml");
             } else {
