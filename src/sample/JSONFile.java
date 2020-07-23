@@ -22,6 +22,8 @@ public class JSONFile {
                 data.put("name",users.get(x).getName());
                 data.put("password",users.get(x).getPassword());
                 data.put("salt",users.get(x).getSalt());
+                data.put("Security Question",users.get(x).getSecurityQuestion());
+                data.put("Answer",users.get(x).getAnswer());
 
                 userList.add(data);
             }
@@ -56,6 +58,8 @@ public class JSONFile {
                 user.setName(record.get("name").toString());
                 user.setPassword(record.get("password").toString());
                 user.setSalt(record.get("salt").toString());
+                user.setSecurityQuestion(record.get("Security Question").toString());
+                user.setAnswer(record.get("Answer").toString());
 
                 _users.add(user);
             }

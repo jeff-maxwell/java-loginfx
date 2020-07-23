@@ -6,6 +6,8 @@ public class User {
     private String email;
     private String password;
     private String salt;
+    private String securityQuestion;
+    private String answer;
 
     public String getName() {
         return this.name;
@@ -45,5 +47,21 @@ public class User {
 
     public void setSalt(String _value) {
         this.salt = _value;
+    }
+
+    public String getSecurityQuestion() {
+        return this.securityQuestion;
+    }
+
+    public void setSecurityQuestion(String _value) {
+        this.securityQuestion = _value;
+    }
+
+    public String getAnswer() {
+        return this.answer;
+    }
+
+    public void setAnswer(String _value) {
+        this.answer = _value;
     }
 }
